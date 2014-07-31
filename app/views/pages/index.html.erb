@@ -1,2 +1,31 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BurningAirlinesPTYLTD</title>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </nav>
+
+  <button>Book Your Flights Now!</button>
+
+  <script id="flightsTemplate">
+    <div id="flights">
+      <h1>Flights</h1>
+      <form id="travelForm" action="#">
+        <label for="origin">Origin: </label><input type="text" id="origin" />
+        <label for="destination">Destination: </label><input type="text" id="destination" />
+        <label for="departing">Departing: </label><input type="date" id="departing" />
+        <label for="arriving">Arriving: </label><input type="date" id="arriving" />
+      </form>
+    </div>
+  </script>
+
+
+</body>
+</html>
