@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140731020641) do
 
   create_table "flights", force: true do |t|
     t.text     "name"
-    t.date     "origin_date"
-    t.date     "destination_date"
+    t.datetime "origin_date"
+    t.datetime "destination_date"
     t.text     "origin"
     t.text     "destination"
     t.integer  "airplane_id"
