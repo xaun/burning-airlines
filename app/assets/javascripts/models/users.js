@@ -1,11 +1,11 @@
 var app = app || {};
 
 app.User = Backbone.Model.extend({
-  // url: '/users'
+  urlRoot: '/users',
   defaults: {
-    id: 0,
-    name: 'Name?'
+    name: 'Noname'
   }
 });
 
 // newUser = new app.User({name: $('#name').val()});
+
