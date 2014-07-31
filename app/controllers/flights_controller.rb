@@ -17,4 +17,10 @@ class FlightsController < ApplicationController
     render :json => @flight
   end
 
+  def update
+    @airplane = Airplane.find params[:id]
+    @airplane.update(:name => params[:name], :rows => params[:rows], :columns => params[:columns])
+    render :json => @airplane
+  end
+
 end

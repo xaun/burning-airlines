@@ -17,4 +17,10 @@ class UsersController < ApplicationController
     render :json => @user
   end
 
+  def update
+    @user = User.find params[:id]
+    @user.update(:name => params[:name])
+    render :json => @user
+  end
+
 end

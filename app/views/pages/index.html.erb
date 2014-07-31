@@ -1,31 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>BurningAirlinesPTYLTD</title>
-</head>
-<body>
+<script type='text/template' id='user-template'>
+  <h2>Create User</h2>
+  <form id='create-user-form' action='#'>
 
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-    </ul>
-  </nav>
+    <label for='name'>Name: </label>
+    <input type='text' id='name' autofocus='true'>
 
-  <button>Book Your Flights Now!</button>
+    <button>Create</button>
+  </form>
+</script>
 
-  <script id="flightsTemplate">
-    <div id="flights">
-      <h1>Flights</h1>
-      <form id="travelForm" action="#">
-        <label for="origin">Origin: </label><input type="text" id="origin" />
-        <label for="destination">Destination: </label><input type="text" id="destination" />
-        <label for="departing">Departing: </label><input type="date" id="departing" />
-        <label for="arriving">Arriving: </label><input type="date" id="arriving" />
-      </form>
-    </div>
-  </script>
+<script type='text/template' id='airplane-template'>
+  <h2>Create Airplane</h2>
+  <form id='create-airplane-form' action='#'>
 
+    <label for='name'>Name: </label>
+    <input type='text' id='name'>
 
-</body>
-</html>
+    <label for='row'>Row: </label>
+    <input type='number' id='row'>
+
+    <label for='column'>Column: </label>
+    <input type='number' id='column'>
+
+    <button>Create</button>
+  </form>
+</script>
+
+<script type='text/template' id='flight-template'>
+  <h2>Create Flight</h2>
+  <form id="create-flight-form" action="#">
+
+    <label for="airplane">Airplane: </label>
+    <select name="airplane">
+      <%= @airplanes.each do |airplane| %>
+        <option value='<%= airplane.name %>'><%= airplane.name %></option>
+      <% end %>
+    </select>
+
+    <label for="origin">Origin: </label>
+    <input type="text" id="origin">
+
+    <label for="destination">Destination: </label>
+    <input type="text" id="destination">
+
+    <label for="origin_date">Origin Time: </label>
+    <input type="datetime-local" id="origin_date">
+
+    <label for="destination_date">Destination Time: </label>
+    <input type="datetime-local" id="destination_date">
+
+    <button>Create</button>
+  </form>
+</script>
+
+<script type='text/template' id='reservation-template'>
+  <h2>Create Reservation</h2>
+
+  <label for="user">Name: </label>
+  <select name="user">
+    <%= @users.each do |user| %>
+      <option value='<%= user.name %>'><%= user.name %></option>
+    <% end %>
+  </select>
+
+  <label for="flight">Flight: </label>
+  <select name="flight">
+    <%= @flights.each do |flight| %>
+      <option value='<%= flight.name %>'><%= flight.name %></option>
+    <% end %>
+  </select>
+
+  <div id='seat-grid'>
+    <% @flight.airplane.rows.times do |row| %>
+      <% @flight.airplane.columns.times do |column| %>
+        <div class='seat'><%= column %> - <%= row %></div>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+</script>
+
