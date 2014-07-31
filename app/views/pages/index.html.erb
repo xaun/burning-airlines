@@ -1,7 +1,6 @@
 <!--//////////// templates //////////////////////////////-->
-
 <script type='text/template' id='user-template'>
-  <h1>Create User</h1>
+  <h2>Create User</h2>
   <form id='create-user-form' action='#'>
 
     <label for='name'>Name: </label>
@@ -12,7 +11,7 @@
 </script>
 
 <script type='text/template' id='airplane-template'>
-  <h1>Create Airplane</h1>
+  <h2>Create Airplane</h2>
   <form id='create-airplane-form' action='#'>
 
     <label for='name'>Name: </label>
@@ -29,7 +28,7 @@
 </script>
 
 <script type='text/template' id='flight-template'>
-  <h1>Create Flight</h1>
+  <h2>Create Flight</h2>
   <form id="create-flight-form" action="#">
 
     <label for="airplane">Airplane: </label>
@@ -55,3 +54,30 @@
   </form>
 </script>
 
+<script type='text/template' id='reservation-template'>
+  <h2>Create Reservation</h2>
+
+  <label for="user">Name: </label>
+  <select name="user">
+    <%= @users.each do |user| %>
+      <option value='<%= user.name %>'><%= user.name %></option>
+    <% end %>
+  </select>
+
+  <label for="flight">Flight: </label>
+  <select name="flight">
+    <%= @flights.each do |flight| %>
+      <option value='<%= flight.name %>'><%= flight.name %></option>
+    <% end %>
+  </select>
+
+  <div id='seat-grid'>
+    <% @flight.airplane.rows.times do |row| %>
+      <% @flight.airplane.columns.times do |column| %>
+        <div class='seat'><%= column %> - <%= row %></div>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
+
+</script>
