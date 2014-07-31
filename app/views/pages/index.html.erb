@@ -1,38 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>BurningAirlinesPTYLTD</title>
-</head>
-<body>
+<!--//////////// templates //////////////////////////////-->
 
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-    </ul>
-  </nav>
+<script type='text/template' id='user-template'>
+  <h1>Create User</h1>
+  <form id='create-user-form' action='#'>
 
-  <button id="bookFlight-button">Book Your Flights Now!</button>
+    <label for='name'>Name: </label>
+    <input type='text' id='name' autofocus='true'>
 
-  <div id="main"></div>
+    <button>Create</button>
+  </form>
+</script>
 
+<script type='text/template' id='airplane-template'>
+  <h1>Create Airplane</h1>
+  <form id='create-airplane-form' action='#'>
 
+    <label for='name'>Name: </label>
+    <input type='text' id='name'>
 
-  <!--//////////// templates //////////////////////////////-->
+    <label for='row'>Row: </label>
+    <input type='number' id='row'>
 
-  <script id="flightsTemplate" type="text/text-template">
-    <div id="flights">
-      <h1>Flights</h1>
-      <form id="travelForm" action="#">
-        <label for="origin">Origin: </label><input type="text" id="origin" />
-        <label for="destination">Destination: </label><input type="text" id="destination" />
-        <label for="departing">Departing: </label><input type="date" id="departing" />
-        <label for="arriving">Arriving: </label><input type="date" id="arriving" />
-      </form>
-    </div>
-  </script>
+    <label for='column'>Column: </label>
+    <input type='number' id='column'>
 
+    <button>Create</button>
+  </form>
+</script>
 
+<script type='text/template' id='flight-template'>
+  <h1>Create Flight</h1>
+  <form id="create-flight-form" action="#">
 
-</body>
-</html>
+    <label for="airplane">Airplane: </label>
+    <select name="airplane">
+      <%= @airplanes.each do |airplane| %>
+        <option value='<%= airplane.name %>'><%= airplane.name %></option>
+      <% end %>
+    </select>
+
+    <label for="origin">Origin: </label>
+    <input type="text" id="origin">
+
+    <label for="destination">Destination: </label>
+    <input type="text" id="destination">
+
+    <label for="origin_date">Origin Time: </label>
+    <input type="datetime-local" id="origin_date">
+
+    <label for="destination_date">Destination Time: </label>
+    <input type="datetime-local" id="destination_date">
+
+    <button>Create</button>
+  </form>
+</script>
+
