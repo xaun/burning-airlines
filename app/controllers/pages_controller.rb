@@ -4,6 +4,6 @@ class PagesController < ApplicationController
     @flights = Flight.all
     @users = User.all
 
-    @flight = Flight.all[0]
+    @flight = Flight.all[0] # Just to play around with the reservations grid
   end
 end
