@@ -4,8 +4,8 @@
 #
 #  id               :integer          not null, primary key
 #  name             :text
-#  origin_date      :date
-#  destination_date :date
+#  origin_date      :datetime
+#  destination_date :datetime
 #  origin           :text
 #  destination      :text
 #  airplane_id      :integer
