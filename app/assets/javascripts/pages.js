@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
   app.templates = {
-    flightView:$('#flightsTemplate').html();
+    userView: $('#user-template').html()
   }
 
+  app.router = new app.Router();
+  Backbone.history.start();
 });

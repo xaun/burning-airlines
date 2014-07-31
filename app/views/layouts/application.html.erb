@@ -8,17 +8,16 @@
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href='#'>Home</a></li>
-      <li><a href='#'>Create User</a></li>
-      <li><a href='#'>Create Airplane</a></li>
-      <li><a href='#'>Create Flight</a></li>
-      <li><a href='#'>Create Reservation</a></li>
-    </ul>
-  </nav>
-
-  <div id='main'></div>
+  <div id='main'>
+    <nav>
+      <a href='#'>Home</a>
+      <div id="create-user">Create User</div>
+      <a href='#'>Create Airplane</a>
+      <a href='#'>Create Flight</a>
+      <a href='#'>Create Reservation</a>
+    </nav>
+    <div id="content"></div>
+  </div>
 
   <%= yield %>
 

@@ -1,3 +1,4 @@
+<!--//////////// templates //////////////////////////////-->
 <script type='text/template' id='user-template'>
   <h2>Create User</h2>
   <form id='create-user-form' action='#'>
@@ -73,10 +74,10 @@
   <div id='seat-grid'>
     <% @flight.airplane.rows.times do |row| %>
       <% @flight.airplane.columns.times do |column| %>
-        <div class='seat'><%= row %> - <%= column %></div>
+        <div class='seat'><%= column %> - <%= row %></div>
       <% end %>
       <br>
     <% end %>
   </div>
-
 </script>
+
