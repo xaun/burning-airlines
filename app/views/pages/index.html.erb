@@ -30,6 +30,9 @@
   <h2>Create Flight</h2>
   <form id="create-flight-form" action="#">
 
+    <label for="name">Name: </label>
+    <input type="text" id="name">
+
     <label for="airplane">Airplane: </label>
     <select name="airplane">
       <%= @airplanes.each do |airplane| %>
@@ -59,14 +62,14 @@
   <label for="user">Name: </label>
   <select name="user">
     <%= @users.each do |user| %>
-      <option value='<%= user.name %>'><%= user.name %></option>
+      <option value='<%= user.id %>'><%= user.name %></option>
     <% end %>
   </select>
 
   <label for="flight">Flight: </label>
   <select name="flight">
     <%= @flights.each do |flight| %>
-      <option value='<%= flight.name %>'><%= flight.name %></option>
+      <option value='<%= flight.id %>'><%= flight.name %></option>
     <% end %>
   </select>
 
