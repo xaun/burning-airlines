@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Burning Airlines</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href='#'>Home</a></li>
+      <li><a href='#'>Create User</a></li>
+      <li><a href='#'>Create Airplane</a></li>
+      <li><a href='#'>Create Flight</a></li>
+      <li><a href='#'>Create Reservation</a></li>
+    </ul>
+  </nav>
+
+  <div id='main'></div>
+
+  <%= yield %>
+
+</body>
+</html>
