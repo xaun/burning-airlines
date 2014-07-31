@@ -21,12 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   host: localhost
-<<<<<<< HEAD
   username: daisy_madonna808
-
-=======
-  username: xaunlopez
->>>>>>> 8ccb750536a0ab623a184f4636af9e19cbb63356
 
 development:
   <<: *default
