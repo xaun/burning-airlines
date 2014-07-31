@@ -17,4 +17,15 @@ class ReservationController < ApplicationController
     render :json => @reservation
   end
 
+  def update
+
+    @user = User.find params[:id]
+    @user.update(:name => params[:name])
+    render :json => @user
+
+    @flight = Flight.find params[:id]
+    @flight.update(:name => params[:name], :origin_date => params[:origin_date], :destination_date => params[:destination_date], :origin => params[:origin], :destination => params[:destination], :airplane_id => params[:airplane_id])
+    render :json => @flight
+  end
+
 end

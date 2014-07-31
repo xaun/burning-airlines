@@ -4,7 +4,6 @@ app.ReservationsView = Backbone.View.extend({
   el: '#content',
 
   events: {
-    'click button': 'createReservation'
   },
 
   initialize: function () {
@@ -17,7 +16,6 @@ app.ReservationsView = Backbone.View.extend({
   },
 
   createReservation: function () {
-    var newReservation = new app.Reservation({})
   }
 
 });
