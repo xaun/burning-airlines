@@ -23,6 +23,7 @@ default: &default
   host: localhost
   username: daisy_madonna808
 
+
 development:
   <<: *default
   database: burning_airlines_development
