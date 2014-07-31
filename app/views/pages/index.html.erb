@@ -34,7 +34,7 @@
     <label for="airplane">Airplane: </label>
     <select name="airplane">
       <%= @airplanes.each do |airplane| %>
-        <option value='<%= airplane.name %>'><%= airplane.name %></option>
+        <option value='<%= airplane.id %>'><%= airplane.name %></option>
       <% end %>
     </select>
 
