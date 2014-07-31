@@ -12,12 +12,11 @@ app.AppView = Backbone.View.extend({
   },
 
   initialize: function () {
-    console.log('initialize.appView');
+
   },
 
   render: function () {
-    console.log('render.appView');
-    // this.$el.html( app.templates.addView );
+
   },
 
   createUser: function () {
