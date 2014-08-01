@@ -37,14 +37,13 @@ app.ReservationView = Backbone.View.extend({
   },
 
   createSeats: function () {
-    var flight_id = $('#flight-selection').val();
-    debugger;
-    var airplane_id = app.flights.models[flight_id].get('airplane_id');
-    var current_airplane = app.airplanes.models[airplane_id];
+    var id_of_flight = $('#flight-selection').val();
+    var airplane_id = app.flights.findWhere({id: parseInt(id_of_flight)}).get('airplane_id');
+    var current_airplane = app.airplanes.findWhere({id: parseInt(airplane_id)});
     var rows = current_airplane.get('rows');
     var columns = current_airplane.get('columns');
-    console.log(rows)
-    console.log(columns)
+    console.log(rows);
+    console.log(columns);
 
 
   }
