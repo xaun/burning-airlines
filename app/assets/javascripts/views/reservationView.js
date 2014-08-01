@@ -1,13 +1,16 @@
 var app = app || {};
 
 app.ReservationsView = Backbone.View.extend({
-  el: '#content',
+  tagName: 'div',
 
   events: {
   },
 
   initialize: function () {
-
+    if (app.currentView) {
+      app.currentView.remove();
+    }
+    app.currentView = this;
   },
 
   render: function () {

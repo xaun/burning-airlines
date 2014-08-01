@@ -2,7 +2,7 @@ class AirplanesController < ApplicationController
 
   def index
     @airplanes = Airplane.all
-    response_to do |format|
+    respond_to do |format|
       format.html {}
       format.json { render :json => @airplanes }
     end

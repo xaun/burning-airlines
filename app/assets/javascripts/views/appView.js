@@ -5,10 +5,6 @@ app.AppView = Backbone.View.extend({
   el: '#main',
 
   events: {
-    'click #create-user': 'createUser',
-    'click #create-airplane': 'createAirplane',
-    'click #create-flight': 'createFlight',
-    'click #create-reservation': 'createReservations'
   },
 
   initialize: function () {
@@ -19,28 +15,21 @@ app.AppView = Backbone.View.extend({
 
   },
 
+  //
   createUser: function () {
-    var userView = new app.UserView();
-    userView.render();
-
+    app.router.navigate("users/create", true);
   },
 
   createAirplane: function () {
-    var airplaneView = new app.AirplaneView();
-    airplaneView.render();
-
+    app.router.navigate("airplanes/create", true);
   },
 
   createFlight: function () {
-    var flightView = new app.FlightView();
-    flightView.render();
-
+    app.router.navigate("flights/create", true);
   },
 
   createReservations: function () {
-    var reservationsView = new app.ReservationsView();
-    reservationsView.render();
-
+    app.router.navigate("reservations/create", true)
   }
 
 });

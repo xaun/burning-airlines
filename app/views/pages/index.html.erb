@@ -35,9 +35,9 @@
 
     <label for="airplane">Airplane: </label>
     <select name="airplane">
-      <%= @airplanes.each do |airplane| %>
-        <option value='<%= airplane.id %>'><%= airplane.name %></option>
-      <% end %>
+      {{#each airplanes}}
+        <option value='{{id}}'>{{name}}</option>
+      {{/each}}
     </select>
 
     <label for="origin">Origin: </label>
