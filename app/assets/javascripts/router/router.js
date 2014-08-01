@@ -23,8 +23,8 @@ app.Router = Backbone.Router.extend({
     app.flights = new app.Flights();
     app.flights.fetch();
 
-    // app.reservations = new app.Reservations();
-    // app.reservations.fetch();
+    app.reservations = new app.Reservations();
+    app.reservations.fetch();
   },
 
   index: function () {
@@ -58,10 +58,19 @@ app.Router = Backbone.Router.extend({
   },
 
   viewFlights: function () {
+
     var flightsListView = new app.FlightsListView();
     flightsListView.render();
-  }
+  },
 
+  createReservations: function () {
+    var reservationView = new app.ReservationView();
+    reservationView.render();
+  },
+
+  viewReservations: function () {
+
+  }
 });
 
 

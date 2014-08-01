@@ -7,7 +7,7 @@ $(document).ready(function () {
     airplanesListView: $('#airplanes-list-template').html(),
     flightView: $('#flight-template').html(),
     flightsListView: $('#flights-list-template').html(),
-    reservationsView: $('#reservation-template').html()
+    reservationView: $('#reservation-template').html()
   }
 
   app.router = new app.Router();
