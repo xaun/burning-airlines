@@ -27,6 +27,7 @@ app.FlightView = Backbone.View.extend({
     console.log(newFlight);
     newFlight.save();
     app.flights.add(newFlight);
+    app.router.navigate('flights/list', true);
   }
 
 });

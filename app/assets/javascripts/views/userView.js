@@ -30,7 +30,7 @@ app.UserView = Backbone.View.extend({
     // adds to the backbone memory (browser)
     app.users.add(newUser);
     // Send view to a users list
-    // app.navigate("users/list", true);
+    app.router.navigate("users/list", true);
   }
 
 });
