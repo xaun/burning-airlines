@@ -4,13 +4,13 @@ app.Router = Backbone.Router.extend({
   routes: {
     '': 'index',
     'users/create': 'createUser',
-    // 'users/list': 'viewUsers',
+    'users/list': 'viewUsers',
     'airplanes/create': 'createAirplane',
-    // 'airplanes/list': 'listAirplanes',
+    'airplanes/list': 'viewAirplanes',
     'flights/create': 'createFlights',
-    // 'flights/list': 'listFlights',
+    'flights/list': 'viewFlights',
     'reservations/create': 'createReservations',
-    // 'reservations/list': 'listReservations'
+    // 'reservations/list': 'viewReservations'
   },
 
   initialize: function () {
@@ -38,7 +38,8 @@ app.Router = Backbone.Router.extend({
   },
 
   viewUsers: function () {
-
+    var usersListView = new app.UsersListView();
+    usersListView.render();
   },
 
   createAirplane: function () {
@@ -47,7 +48,8 @@ app.Router = Backbone.Router.extend({
   },
 
   viewAirplanes: function () {
-
+    var airplanesListView = new app.AirplanesListView();
+    airplanesListView.render();
   },
 
   createFlights: function () {
@@ -56,13 +58,9 @@ app.Router = Backbone.Router.extend({
   },
 
   viewFlights: function () {
-
-  },
-
-  // createReservations: function () {
-  //   var reservationView = new app.ReservationView();
-  //   reservationView.render();
-  // }
+    var flightsListView = new app.FlightsListView();
+    flightsListView.render();
+  }
 
 });
 

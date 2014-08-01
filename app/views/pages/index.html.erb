@@ -9,6 +9,15 @@
   </form>
 </script>
 
+<script type='text/template' id='users-list-template'>
+  <h2>List of Users</h2>
+    <ul>
+      {{#each users}}
+        <li>{{name}}</li>
+      {{/each}}
+    </ul>
+</script>
+
 <script type='text/template' id='airplane-template'>
   <h2>Create Airplane</h2>
   <form id='create-airplane-form' action='#'>
@@ -24,6 +33,17 @@
 
     <button>Create</button>
   </form>
+</script>
+
+<script type='text/template' id='airplanes-list-template'>
+  <h2> List of Airplanes </h2>
+    <ul>
+      {{#each airplanes}}
+        <li>{{name}}</li>
+        <li>{{row}}</li>
+        <li>{{column}}</li>
+      {{/each}}
+    </ul>
 </script>
 
 <script type='text/template' id='flight-template'>
@@ -54,6 +74,19 @@
 
     <button>Create</button>
   </form>
+</script>
+
+<script type='text/template' id='flights-list-template'>
+  <h2>List of Flights</h2>
+  <ul>
+    {{#each flights}}
+      <li>{{name}}</li>
+      <ul>
+        <li>{{origin}}</li>
+        <li>{{destination}}</li>
+      </ul>
+    {{/each}}
+  </ul>
 </script>
 
 <script type='text/template' id='reservation-template'>

@@ -26,6 +26,7 @@ app.FlightView = Backbone.View.extend({
     var newFlight = new app.Flight({name: $('#name').val(), airplane_id: $('#airplane').val(), origin: $('#origin').val(), destination: $('#destination').val(), origin_date: $('#origin_date').val(), destination_date: $('#destination_date').val()});
     newFlight.save();
     app.flights.add(newFlight);
+    app.router.navigate('flights/list', true);
   }
 
 });

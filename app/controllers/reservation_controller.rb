@@ -2,7 +2,7 @@ class ReservationController < ApplicationController
 
   def index
     @reservations = Reservation.all
-    response_to do |format|
+    respond_to do |format|
       format.html {}
       format.json { render :json => @reservations }
     end
