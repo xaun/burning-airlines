@@ -34,6 +34,10 @@ app.ReservationView = Backbone.View.extend({
     var newReservation = new app.Reservation({user_id: $('#user-selection').val(), flight_id: $('#flight-selection').val(), row: row, column: column});
     newReservation.save();
     app.reservations.add(newReservation);
+
+    // Once seat selection is made, send to the to the 'Itinerary' view
+    // (reservationsListView).
+    app.router.navigate('reservations/list');
   },
 
   createSeats: function () {
@@ -44,7 +48,6 @@ app.ReservationView = Backbone.View.extend({
     var columns = current_airplane.get('columns');
     console.log(rows);
     console.log(columns);
-
 
   }
 

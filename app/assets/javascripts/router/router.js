@@ -10,7 +10,7 @@ app.Router = Backbone.Router.extend({
     'flights/create': 'createFlights',
     'flights/list': 'viewFlights',
     'reservations/create': 'createReservations',
-    // 'reservations/list': 'viewReservations'
+    'reservations/list': 'viewReservations'
   },
 
   initialize: function () {
@@ -72,7 +72,8 @@ app.Router = Backbone.Router.extend({
   },
 
   viewReservations: function () {
-
+    var reservationsListView = new app.ReservationsListView();
+    reservationsListView.render();
   }
 });
 
