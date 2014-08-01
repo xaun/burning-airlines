@@ -28,6 +28,9 @@ app.Router = Backbone.Router.extend({
   },
 
   index: function () {
+    if (app.currentView) {
+      app.currentView.remove();
+    }
     var appView = new app.AppView()
     appView.render();
   },
