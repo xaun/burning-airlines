@@ -61,16 +61,16 @@
 
   <label for="user">Name: </label>
   <select name="user">
-    <%= @users.each do |user| %>
-      <option value='<%= user.id %>'><%= user.name %></option>
-    <% end %>
+    {{#each users}}
+      <option value='{{id}}'>{{name}}</option>
+    {{/each}}
   </select>
 
-  <label for="flight">Flight: </label>
+<label for="flight">Name: </label>
   <select name="flight">
-    <%= @flights.each do |flight| %>
-      <option value='<%= flight.id %>'><%= flight.name %></option>
-    <% end %>
+    {{#each flights}}
+      <option value='{{id}}'>{{name}}</option>
+    {{/each}}
   </select>
 
   <div id='seat-grid'>

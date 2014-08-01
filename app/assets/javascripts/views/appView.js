@@ -28,7 +28,7 @@ app.AppView = Backbone.View.extend({
     app.router.navigate("flights/create", true);
   },
 
-  createReservations: function () {
+  createReservation: function () {
     app.router.navigate("reservations/create", true)
   }
 

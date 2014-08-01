@@ -1,9 +1,10 @@
 var app = app || {};
 
-app.ReservationsView = Backbone.View.extend({
+app.ReservationView = Backbone.View.extend({
   tagName: 'div',
 
   events: {
+    'click button': 'createReservation'
   },
 
   initialize: function () {
@@ -14,8 +15,12 @@ app.ReservationsView = Backbone.View.extend({
   },
 
   render: function () {
-    var reservationsView = Handlebars.compile(app.templates.reservationsView);
-    this.$el.html( reservationsView );
+    debugger;
+    var reservationView = Handlebars.compile(app.templates.reservationView);
+    this.$el.html( reservationView({users: app.users.toJSON(), flights: app.flights.toJSON()}) );
+
+    this.$el.attr('id', 'reservation-view');
+    $('#content').html(this.el);
   },
 
   createReservation: function () {
