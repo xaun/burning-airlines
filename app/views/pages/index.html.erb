@@ -37,15 +37,22 @@
 
 <script type='text/template' id='airplanes-list-template'>
   <h2> List of Airplanes </h2>
-    <ul>
-      {{#each airplanes}}
-        <li>{{name}}</li>
-        <ul>
-          <li>{{rows}}</li>
-          <li>{{columns}}</li>
-        </ul>
-      {{/each}}
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rows</th>
+          <th>Columns</th>
+      </thead>
+      <tbody>
+        {{#each airplanes}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{rows}}</td>
+            <td>{{columns}}</td>
+        {{/each}}
+      </tbody>
+    </table>
 </script>
 
 <script type='text/template' id='flight-template'>
@@ -80,15 +87,22 @@
 
 <script type='text/template' id='flights-list-template'>
   <h2>List of Flights</h2>
-  <ul>
-    {{#each flights}}
-      <li>{{name}}</li>
-      <ul>
-        <li>{{origin}}</li>
-        <li>{{destination}}</li>
-      </ul>
-    {{/each}}
-  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rows</th>
+        <th>Columns</th>
+    </thead>
+    <tbody>
+      {{#each flights}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{origin}}</td>
+          <td>{{destination}}</td>
+      {{/each}}
+    </tbody>
+  </table>
 </script>
 
 <script type='text/template' id='reservation-template'>
