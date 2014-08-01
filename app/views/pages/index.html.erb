@@ -34,7 +34,7 @@
     <input type="text" id="name">
 
     <label for="airplane">Airplane: </label>
-    <select name="airplane">
+    <select name="airplane" id='airplane-selection'>
       {{#each airplanes}}
         <option value='{{id}}'>{{name}}</option>
       {{/each}}
@@ -60,14 +60,14 @@
   <h2>Create Reservation</h2>
 
   <label for="user">Name: </label>
-  <select name="user">
+  <select name="user" id='user-selection'>
     {{#each users}}
       <option value='{{id}}'>{{name}}</option>
     {{/each}}
   </select>
 
-<label for="flight">Name: </label>
-  <select name="flight">
+<label for="flight">Flight: </label>
+  <select name="flight" id='flight-selection'>
     {{#each flights}}
       <option value='{{id}}'>{{name}}</option>
     {{/each}}

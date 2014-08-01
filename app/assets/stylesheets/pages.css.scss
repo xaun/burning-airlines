@@ -5,5 +5,9 @@
   display: inline-block;
   line-height: 5em;
   text-align: center;
+  z-index: 5;
+}
 
+.booked {
+  background-color: red;
 }
