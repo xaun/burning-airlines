@@ -8,7 +8,8 @@ $(document).ready(function () {
     flightView: $('#flight-template').html(),
     flightsListView: $('#flights-list-template').html(),
     reservationView: $('#reservation-template').html(),
-    reservationsListView: $('#reservations-list-template').html()
+    reservationsListView: $('#reservations-list-template').html(),
+    seatView: $('#seats-template').html()
   }
 
   app.router = new app.Router();

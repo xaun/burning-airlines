@@ -26,18 +26,14 @@ app.ReservationView = Backbone.View.extend({
 
   createReservation: function (event) {
     console.log(event.target);
-    $(event.target).addClass('booked');
-    console.log('NO REFUNDS!');
-    var string = $(event.target).text();
-    var row = string[4];
-    var column = string[0];
-    var newReservation = new app.Reservation({user_id: $('#user-selection').val(), flight_id: $('#flight-selection').val(), row: row, column: column});
-    newReservation.save();
-    app.reservations.add(newReservation);
-
-    // Once seat selection is made, send to the to the 'Itinerary' view
-    // (reservationsListView).
-    app.router.navigate('reservations/list');
+      $(event.target).addClass('booked');
+      console.log('NO REFUNDS!');
+      var string = $(event.target).text();
+      var row = string[4];
+      var column = string[0];
+      var newReservation = new app.Reservation({user_id: $('#user-selection').val(), flight_id: $('#flight-selection').val(), row: row, column: column});
+      newReservation.save();
+      app.reservations.add(newReservation);
   },
 
   createSeats: function () {
@@ -48,9 +44,12 @@ app.ReservationView = Backbone.View.extend({
     var columns = current_airplane.get('columns');
     console.log(rows);
     console.log(columns);
-
+    $('#seat-grid').empty();
+    for (var i = 1; i <= rows; i++) {
+      for (var j = 1; j <= columns; j++) {
+        var seat = new app.SeatsView({row: i, column: j});
+        seat.render();
+      }
+    }
   }
-
-
-
 });

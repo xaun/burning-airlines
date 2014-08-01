@@ -3,18 +3,17 @@ var app = app || {};
 app.SeatsView = Backbone.View.extend({
   tagName: 'div',
 
-  initialize: function () {
-    if (app.currentSeatsView) {
-      app.currentSeatsView.remove();
-    }
-    app.currentSeatsView = this;
+  initialize: function (options) {
+    this.row = options.row;
+    this.column = options.column;
   },
 
   render: function () {
     var seatView = Handlebars.compile(app.templates.seatView);
-    this.$el.html( seatView({flights: app.flights.toJSON(), airplanes: app.airplanes.toJSON()}) );
-    this.$el.attr('id', 'seats-view');
-    $('#seat-grid').html(this.el);
+
+    this.$el.append( seatView({row: this.row, column: this.column}) );
+    this.$el.addClass('seat');
+    $('#seat-grid').append(this.el);
   }
 
 });
