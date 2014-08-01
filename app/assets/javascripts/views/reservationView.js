@@ -26,10 +26,6 @@ app.ReservationView = Backbone.View.extend({
 
   createReservation: function (event) {
     console.log(event.target);
-    // if ($(event.target).hasClass('booked')) {
-    //    $(event.target).toggleClass('booked');
-    //    // destroy the reservation where flight = $('#flight-id'), row = string 4, column = string 0, user
-    // } else {
       $(event.target).addClass('booked');
       console.log('NO REFUNDS!');
       var string = $(event.target).text();
@@ -38,7 +34,6 @@ app.ReservationView = Backbone.View.extend({
       var newReservation = new app.Reservation({user_id: $('#user-selection').val(), flight_id: $('#flight-selection').val(), row: row, column: column});
       newReservation.save();
       app.reservations.add(newReservation);
-    // }
   },
 
   createSeats: function () {
@@ -56,9 +51,5 @@ app.ReservationView = Backbone.View.extend({
         seat.render();
       }
     }
-
   }
-
-
-
 });
